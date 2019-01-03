@@ -22,12 +22,8 @@ const deprecations = {
   'remove.me': null
 };
 
-// or
-
-const deprecations = {
-  "old.deprecated": "new.shiny",
-  "remove.me": null
-}
+// Or flat:
+const deprecations = { 'old.deprecated': 'new.shiny', 'remove.me': null };
 
 const deprecation = new Deprecation(deprecations, myConfig);
 ```
@@ -38,7 +34,7 @@ const deprecation = new Deprecation(deprecations, myConfig);
 
 ```
 const myCompliant = deprecation.getCompliant();
-→ { "fine": true, "new": { "shiny": true } }
+→ { fine: true, new: { shiny: true } }
 ```
 
 Returns a new, compliant object. The `null` values in `deprecations` are excluded.
@@ -47,7 +43,7 @@ Returns a new, compliant object. The `null` values in `deprecations` are exclude
 
 ```
 const violations = deprecation.getViolations();
-→ { "old.deprecated": "new.shiny", "remove.me": null }
+→ { 'old.deprecated': 'new.shiny', 'remove.me': null }
 ```
 
 The violations can be used to inform the user about the deprecations, for example:
@@ -60,3 +56,7 @@ for(let deprecated in violations) {
   console.warn(`The "${deprecated}" option is deprecated. Please use "${violations[deprecated]}" instead.`);
 };
 ```
+
+## Example
+
+See [github.com/release-it/.../deprecated.js](https://github.com/webpro/release-it/blob/master/lib/deprecated.js) for a real-world example.
