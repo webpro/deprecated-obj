@@ -1,4 +1,4 @@
-const { isPlainObject, forOwn, set, size } = require('lodash');
+const { forOwn, has, isPlainObject, set, size } = require('lodash');
 const flat = require('flat');
 
 class Deprecated {
@@ -33,7 +33,7 @@ class Deprecated {
             }
           }
         });
-      } else {
+      } else if(!has(compliant, keys)) {
         set(compliant, keys, {});
       }
     };
