@@ -4,7 +4,7 @@ Simple utility to help making the transition from deprecated configuration objec
 
 ## Usage
 
-```
+```js
 const Deprecation = require('deprecation');
 
 const myConfig = {
@@ -32,7 +32,7 @@ const deprecation = new Deprecation(deprecations, myConfig);
 
 ### `Deprecation::getCompliant()`
 
-```
+```js
 const myCompliant = deprecation.getCompliant();
 → { fine: true, new: { shiny: true } }
 ```
@@ -41,14 +41,14 @@ Returns a new, compliant object. The `null` values in `deprecations` are exclude
 
 ### `Deprecation::getViolations()`
 
-```
+```js
 const violations = deprecation.getViolations();
 → { 'old.deprecated': 'new.shiny', 'remove.me': null }
 ```
 
 The violations can be used to inform the user about the deprecations, for example:
 
-```
+```js
 if (Object.keys(violations).length > 0) {
   console.warn(`Deprecated configuration options found. Please migrate before the next major release.`);
 }
