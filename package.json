@@ -1,6 +1,6 @@
 {
   "name": "deprecated-obj",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Compares deprecations against a configuration object, and returns a compliant object and violations",
   "main": "index.js",
   "scripts": {
