@@ -52,9 +52,9 @@ The violations can be used to inform the user about the deprecations, for exampl
 if (Object.keys(violations).length > 0) {
   console.warn(`Deprecated configuration options found. Please migrate before the next major release.`);
 }
-for(let deprecated in violations) {
+for (let deprecated in violations) {
   console.warn(`The "${deprecated}" option is deprecated. Please use "${violations[deprecated]}" instead.`);
-};
+}
 ```
 
 ## Example

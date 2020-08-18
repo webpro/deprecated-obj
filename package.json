@@ -17,13 +17,16 @@
   },
   "license": "MIT",
   "dependencies": {
-    "flat": "^4.1.0",
-    "lodash": "^4.17.11"
+    "flat": "^5.0.2",
+    "lodash": "^4.17.20"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/webpro/deprecated-obj.git"
   },
   "homepage": "https://github.com/webpro/deprecated-obj#readme",
-  "bugs": "https://github.com/webpro/deprecated-obj/issues"
+  "bugs": "https://github.com/webpro/deprecated-obj/issues",
+  "engines": {
+    "node": ">=10"
+  }
 }
